@@ -1,12 +1,33 @@
 var nowHour = dayjs().hour();
+console.log(nowHour);
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $('.main' ).children('.time-block').each(function () {
-  var timeSlot = $(this).attr('id');
-
+  var timeSlot = ($(this).attr('id')).substring(5);
+  $(this).removeClass('past','present','future');
+  if (timeSlot < nowHour) {
+    $(this).addClass('past');
+  } else if (timeSlot == nowHour) {
+    $(this).addClass('present');
+  } else {
+    $(this).addClass('future');
+  };
   console.log(timeSlot);
+  console.log($(this).attr("class"));
 });
+
+
+
+
+  
+
+
+
+
+
+
 
 idContent = {};
 
