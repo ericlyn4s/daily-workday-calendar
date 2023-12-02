@@ -1,7 +1,39 @@
+var nowHour = dayjs().hour();
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+$('.main' ).children('.time-block').each(function () {
+  var timeSlot = $(this).attr('id');
+
+  console.log(timeSlot);
+});
+
+idContent = {};
+
 $(function () {
+  // Render the current date to the bottom of the header
+  $("#currentDay").text(dayjs().format('dddd, MMMM D'));
+
+  // Save user input for a given timeslot to local storage
+  $('.saveBtn').on('click',function() {
+    // Create a local object with the time slot's time ID and content
+
+    var Jhour = $(this).parent().attr('id');
+    var JidContent = $(this).siblings(".description").val();
+    idContent[Jhour] = JidContent;
+    
+    // Input this object to localStorage
+    localStorage.setItem('hourInfo', JSON.stringify(idContent));
+    console.log(JSON.parse(localStorage.getItem('hourInfo')));
+  })
+
+  // Render each timeslot with local storage information
+
+
+
+
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
