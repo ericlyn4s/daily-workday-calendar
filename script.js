@@ -1,5 +1,4 @@
 var nowHour = dayjs().hour();
-console.log(nowHour);
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
@@ -14,22 +13,9 @@ $('.main' ).children('.time-block').each(function () {
   } else {
     $(this).addClass('future');
   };
-  console.log(timeSlot);
-  console.log($(this).attr("class"));
 });
 
-
-
-
-  
-
-
-
-
-
-
-
-idContent = {};
+idContent = JSON.parse(localStorage.getItem('content'));
 
 $(function () {
   // Render the current date to the bottom of the header
@@ -41,15 +27,22 @@ $(function () {
 
     var Jhour = $(this).parent().attr('id');
     var JidContent = $(this).siblings(".description").val();
-    idContent[Jhour] = JidContent;
+    
+    idContent.push(Jhour);
+    idContent.push(JidContent);
     
     // Input this object to localStorage
-    localStorage.setItem('hourInfo', JSON.stringify(idContent));
-    console.log(JSON.parse(localStorage.getItem('hourInfo')));
+    localStorage.setItem('content', JSON.stringify(idContent));
   })
-
+console.log(idContent);
   // Render each timeslot with local storage information
-
+$('.main' ).children('.time-block').each(function () {
+  var timeSlot = $(this).attr('id');
+  var textToRender = idContent.indexOf(timeSlot);
+  if (textToRender > -1) {
+    $(this).children('.description').text(idContent[textToRender+1]);
+};
+});
 
 
 
