@@ -1,3 +1,4 @@
+/* Set a consistent font for entire body */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -30,16 +31,19 @@ textarea {
   border-top: 1px dashed #000000;
 }
 
+/* Past class renders the timeslot as gray */
 .past {
   background-color: #d3d3d3;
   color: white;
 }
 
+/* Present class renders the timeslot as green */
 .present {
   background-color: #ff6961;
   color: white;
 }
 
+/* Future class renders the timeslot as red */
 .future {
   background-color: #77dd77;
   color: white;
@@ -53,6 +57,7 @@ textarea {
   color: white;
 }
 
+/* Make the save  button more dynamic by adding styling when cursor is hovering over it */
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
