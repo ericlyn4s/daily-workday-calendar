@@ -17,11 +17,11 @@ https://ericlyn4s.github.io/daily-workday-calendar/
 
 When the user starts up the page, they'll see the current date displayed under the header. There's a timeslot for each hour of a typical workday, 9am - 5pm. If the current hour falls between that timeframe, the respective hour timeslot will show as red. Any hour timeframes after that will be displayed in green, and any past timeframes will be gray. 
 
-<image src="assets/images/timeslot-pic.png" alt="Given a time of 4:00pm - 4:59pm, the 4 timeslot will be colored red. The future timeslots will be green, and the past timeslots gray." width="450"/>
+<image src="Assets/Images/timeslot-pic.png" alt="Given a time of 4:00pm - 4:59pm, the 4 timeslot will be colored red. The future timeslots will be green, and the past timeslots gray." width="450"/>
 
 The user can click on a timeslot and type in a new event. Should they refresh the page, this event will remain on the calendar since it's being saved to local storage.
 
-<image src="assets/images/event-entry-pic.png" alt="The user enters an event into the 4pm timeslot, reading 'Haircut'." width="450"/>
+<image src="Assets/Images/event-entry-pic.png" alt="The user enters an event into the 4pm timeslot, reading 'Haircut'." width="450"/>
 
 ## Credits
 
